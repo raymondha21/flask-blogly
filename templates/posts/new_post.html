@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}New User Form{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Add Post for {{ user.full_name }}</h1>
+
+    <form id="new_post" method="POST">
+        <p><label>Title:</label>
+            <input class= "form-control" type="text" id="title" name="title" placeholder="Enter a title for your post">
+        </p>
+        <p><label>Content:</label>
+            <input class= "form-control" type="text" id="content" name="content" placeholder="Enter content for your post">
+        </p>
+        <p>
+            <button class="btn btn-primary" action="submit">Submit</button>
+        </p>
+    </form>
+</div>
+{% endblock %}
+

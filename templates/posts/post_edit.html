@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Post Form{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1> {{ post.title }}</h1>
+
+    <form id="edit_post" method="POST">
+        <p><label>Title:</label>
+            <input class="form-control" type="text" id="title" name="title" value="{{ post.title }}"
+                placeholder="Enter a title for your post">
+        </p>
+        <p><label>Content:</label>
+            <input class="form-control" type="text" id="content" name="content" value="{{ post.content }}"
+                placeholder="Enter content for your post">
+        </p>
+        <p>Tags:
+            {% if post.tags %}
+            {% for tag in post.tags %}
+            <a href="/tags/{{ tag.id }}" class="btn btn-info btn-sm">{{ tag.name }} </a>
+            {% endfor %}
+            {% else %}
+            <a href="/tags/4" class="btn btn-info btn-sm">None</a>
+            {% endif %}
+        </p>
+        <p>Add Tags:
+            <input class="form-control" type="text" id="tag" name="tag"
+            placeholder="Enter a tag for your post">
+        </p>
+        <a href="/posts/{{ post.id }}" class="btn btn-danger">Cancel</a> <button class="btn btn-primary"
+            action="submit">Save</button>
+        </p>
+    </form>
+</div>
+{% endblock %}

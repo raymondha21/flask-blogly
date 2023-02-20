@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ tag.name }}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div>
+        <form class="form-group" method="POST">
+            <p>
+                <label>Name:</label>
+                <input class= "form-control" type="text" id="name" name="name" placeholder="Enter a tag name"
+                    value="{{ tag.name }}">
+            </p>
+
+            <p>
+                <a class = "btn btn-danger" href="/tags">Cancel</a> <button class= "btn btn-primary" action="submit">Save</button>
+            </p>
+        </form>
+    </div>
+</div>
+ 
+{% endblock %}
